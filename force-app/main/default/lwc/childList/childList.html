@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Related Cases">
+        <ul class="slds-m-around_medium">
+            <template for:each={items} for:item="item">
+                <li key={item.Id} class="slds-m-bottom_x-small">
+                    <strong>{item.Subject}</strong> - {item.Status}
+                </li>
+            </template>
+        </ul>
+    </lightning-card>
+</template>
