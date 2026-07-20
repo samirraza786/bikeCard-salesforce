@@ -29,8 +29,12 @@ export default class CaseDetailPanel extends LightningElement {
         return getFieldValue(this.caseRecord.data, CASE_NUMBER_FIELD);
     }
 
+    get noSelection() {
+        return !this.recordId;
+    }
+
     get isLoading() {
-        return !this.caseRecord.data && !this.caseRecord.error;
+        return !!this.recordId && !this.caseRecord.data && !this.caseRecord.error;
     }
 
     get hasError() {

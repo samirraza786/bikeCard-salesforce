@@ -1,7 +1,13 @@
 <template>
     <lightning-card title="Case Detail" icon-name="standard:case">
 
-        <template lwc:if={isLoading}>
+        <template lwc:if={noSelection}>
+            <div class="slds-p-around_medium slds-text-color_weak">
+                Select a case to see details.
+            </div>
+        </template>
+
+        <template lwc:elseif={isLoading}>
             <div class="slds-p-around_medium slds-align_absolute-center">
                 <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
             </div>
@@ -33,12 +39,6 @@
                         <td><lightning-formatted-date-time value={createdDate}></lightning-formatted-date-time></td>
                     </tr>
                 </table>
-            </div>
-        </template>
-
-        <template lwc:else>
-            <div class="slds-p-around_medium slds-text-color_weak">
-                Select a case to see details.
             </div>
         </template>
 
