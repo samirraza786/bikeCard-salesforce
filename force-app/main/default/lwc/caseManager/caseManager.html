@@ -14,7 +14,12 @@
             </lightning-button>
         </div>
     </lightning-card>
+
     <div class="slds-m-top_medium">
-        <c-child-list items={cases}></c-child-list>
+        <c-child-list items={cases} oncaseselect={handleCaseSelect}></c-child-list>
+    </div>
+
+    <div class="slds-m-top_medium">
+        <c-case-detail-panel record-id={selectedCaseId}></c-case-detail-panel>
     </div>
 </template>

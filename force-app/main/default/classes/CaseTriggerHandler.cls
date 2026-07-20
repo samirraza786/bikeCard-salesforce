@@ -15,4 +15,4 @@ public with sharing class CaseTriggerHandler {
             System.enqueueJob(new CaseSyncQueueable(new List<Id>(caseIdsToSync)));
         }
     }
-}
+} 

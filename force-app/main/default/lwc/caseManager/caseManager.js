@@ -8,6 +8,7 @@ export default class CaseManager extends LightningElement {
     cases = [];
     draftSubject = '';
     wiredCasesResult;
+    selectedCaseId;
 
     @wire(getCases, { accountId: '$recordId' })
     wiredCases(result) {
@@ -21,6 +22,10 @@ export default class CaseManager extends LightningElement {
 
     handleSubjectChange(event) {
         this.draftSubject = event.target.value;
+    }
+
+    handleCaseSelect(event) {
+        this.selectedCaseId = event.detail;
     }
 
     handleSave() {

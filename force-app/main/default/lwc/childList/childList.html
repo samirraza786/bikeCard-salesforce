@@ -2,7 +2,11 @@
     <lightning-card title="Related Cases">
         <ul class="slds-m-around_medium">
             <template for:each={items} for:item="item">
-                <li key={item.Id} class="slds-m-bottom_x-small">
+                <li key={item.Id}
+                    data-id={item.Id}
+                    onclick={handleCaseClick}
+                    class="slds-m-bottom_x-small"
+                    style="cursor: pointer;">
                     <strong>{item.Subject}</strong> - {item.Status}
                 </li>
             </template>
